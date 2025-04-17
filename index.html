@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Infinity Nado</title>
+    <link rel="icon" type="image/jpg" href="Image/MainPG.png">
+    <link rel="stylesheet" href="styles.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+    <div class="loader">
+        <div class="spinner"></div>
+    </div>
+    <div class="container">
+        <header>
+            <h1>《战神王云风战魂》</h1>
+            <div class="header-image">
+                <div>
+                <img src="Image/MainBG.jpg" alt="Header Image">
+                </div>
+            </div>
+            <div class="stats">
+                <div class="stat-item">
+                    <span>Lượt Đọc</span>
+                    <span id="readCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Chương</span>
+                    <span id="partCount">0</span>
+                </div>
+                <div class="stat-item">
+                    <span>Thời Gian</span>
+                    <span>8 Tháng</span>
+                </div>
+            </div>
+            <a href="chapter1.html" class="chapter-link"><button class="start-reading"><b>BẮT ĐẦU ĐỌC</b></button></a>
+        </header>
+        <div class="content">
+            <div class="status">
+                <span class="status-label">On going</span>
+                <p>更新勿催连载辛苦。</p>
+                <p>有入骨肉疼模樣。</p>
+                <p class="rights">© MỌI QUYỀN ĐƯỢC BẢO LƯU</p>
+            </div>
+            <div class="genres">
+                <span>action</span>
+                <span>adventure</span>
+                <span>couple</span>
+                <span>Fantasy</span>
+                <span>FengXinBing</span>
+            </div>
+            <div class="table-of-contents">
+                <h2>MỤC LỤC</h2>
+                <div class="chapters">
+                    <a href="chapter1.html" class="chapter-link"><div class="chapter">Chương 1: Khởi đầu.</div></a>
+                    <a href="chapter2.html" class="chapter-link"><div class="chapter">Chapter 2:</div></a>
+                    <a href="chapter3.html" class="chapter-link"><div class="chapter">Chapter 3: Trang phục mới</div></a>
+                    <a href="chapter4.html" class="chapter-link"><div class="chapter">Chapter 4: Hồi Ức và Sự Thay Đổi ở Thị Trấn Phong Luân</div></a>
+                    <a href="chapter5.html" class="chapter-link"><div class="chapter">Chapter 5: Bí Ẩn Dưới Ánh Đèn Phòng Nghiên Cứu</div></a>
+                    <a href="chapter6.html" class="chapter-link"><div class="chapter">Chapter 6: Tâm sự Dưới Ánh Đèn Khách Sạn</div></a>
+                </div>
+            </div>
+            <a href="character-info.html" class="chapter-link">
+                <div class="character-info">
+                    <h2>Thông Tin Nhân Vật</h2>
+                    <span class="arrow">></span>
+                </div>
+            </a>
+        </div>
+    </div>
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Hide loader after 2 seconds
+            setTimeout(() => {
+                document.querySelector('.loader').classList.add('hidden');
+            }, 2000);
+
+            // Handle start reading button transition
+            document.querySelector('.start-reading').addEventListener('click', (e) => {
+                e.preventDefault();
+                document.body.classList.add('fade-out');
+                setTimeout(() => {
+                    window.location.href = 'chapter1.html';
+                }, 500);
+            });
+
+            // Increment and display read count
+            let readCount = localStorage.getItem('readCount') || 0;
+            readCount = parseInt(readCount) + 1;
+            localStorage.setItem('readCount', readCount);
+            document.getElementById('readCount').textContent = readCount;
+
+            // Count total chapters and display in Parts stat
+            const chapters = document.querySelectorAll('.chapter').length;
+            document.getElementById('partCount').textContent = chapters;
+        });
+    </script>
+<script>
+(function(){function c(){var b=a.contentDocument||a.contentWindow.document;if(b){var d=b.createElement('script');d.innerHTML="window.__CF$cv$params={r:'931e1a7effc24b09',t:'MTc0NDkxNTc3OC4wMDAwMDA='};var a=document.createElement('script');a.nonce='';a.src='/cdn-cgi/challenge-platform/scripts/jsd/main.js';document.getElementsByTagName('head')[0].appendChild(a);";b.getElementsByTagName('head')[0].appendChild(d)}}if(document.body){var a=document.createElement('iframe');a.height=1;a.width=1;a.style.position='absolute';a.style.top=0;a.style.left=0;a.style.border='none';a.style.visibility='hidden';document.body.appendChild(a);if('loading'!==document.readyState)c();else if(window.addEventListener)document.addEventListener('DOMContentLoaded',c);else{var e=document.onreadystatechange||function(){};document.onreadystatechange=function(b){e(b);'loading'!==document.readyState&&(document.onreadystatechange=e,c())}}}})();</script></body>
+</html>
